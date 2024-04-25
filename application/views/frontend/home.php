@@ -1,23 +1,18 @@
 	
 <?php 
 	function convTime($time_from_news){		
-		
 		$currentTime = date('h:i', strtotime($time_from_news));
-		
 		$am_pm = date('a', strtotime($time_from_news));
-		
 		if($am_pm == "am"){
 			$am_pm = "এএম";
 		}
 		if($am_pm == "pm"){
 			$am_pm = "পিএম";
 		}
-		
 		$engTime = array(1,2,3,4,5,6,7,8,9,0);
 		$bangTime = array('১','২','৩','৪','৫','৬','৭','৮','৯','০');
 		$convertedTime = str_replace($engTime,$bangTime,$currentTime);
 		echo $convertedTime." ".$am_pm;
-		
 	}
 	
 	function convDate($date_from_news){
