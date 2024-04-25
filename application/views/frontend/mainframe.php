@@ -56,8 +56,8 @@
     <meta name="author" content="Muktodhara Technology Limited">
     <link rel="icon" href="<?= base_url().$meta->site_icon;?>">
 	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Your custom styles (optional) -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	
@@ -153,11 +153,23 @@
 					
 					<div class="no_padding col-md-5 col-sm-4 col-xs-12 print-hide">
 						<?php			
-							$ad = $this->frontend_model->get_ad(2);							
+							$ad = $this->frontend_model->get_ad(1);							
 							if($ad != ''){	
-							
 						?>
-							<div style="" class="bottom_margin top_small_margin no_padding col-md-12 col-sm-12 col-xs-12">
+						<!-- <?php print_r($ad) ?> -->
+							<div style="" class="bottom_margin top_small_margin no_padding col-md-6 col-sm-12 col-xs-12">
+								<div class="middleNewsAdd no_padding col-md-12 col-sm-12 col-xs-12">
+									<a class="ads_click_counter" data-ad-id="<?= $ad->advertisement_id;?>" target="_blank" href="<?=$ad->advertisement_url;?>">
+										<img src="<?=base_url().$ad->advertisement_image;?>" title="<?=$ad->advertisement_name;?>" alt="<?=$ad->advertisement_name;?>" />
+									</a>
+								</div>
+							</div>
+							<?php } ?>
+							<?php			
+								$ad = $this->frontend_model->get_ad(2);							
+								if($ad != ''){	
+							?>
+							<div style="" class="bottom_margin top_small_margin no_padding col-md-6 col-sm-12 col-xs-12">
 								<div class="middleNewsAdd no_padding col-md-12 col-sm-12 col-xs-12">
 									<a class="ads_click_counter" data-ad-id="<?= $ad->advertisement_id;?>" target="_blank" href="<?=$ad->advertisement_url;?>">
 										<img src="<?=base_url().$ad->advertisement_image;?>" title="<?=$ad->advertisement_name;?>" alt="<?=$ad->advertisement_name;?>" />
@@ -379,7 +391,7 @@
 								</div>	
                         
 								<div class="col-md-12 col-sm-12 col-xs-12">
-									<a href="<?=base_url().'pages/'.$police->page_id?>" target="_blank">
+									<a href="https://play.google.com/store/apps/details?id=com.vertexbyte.bdal&pcampaignid=web_share" target="_blank">
 										<img src="<?=base_url().$police->page_image;?>" alt="<?= $police->page_title;?>">
 									</a>
 								</div>
@@ -454,7 +466,7 @@
 									<!--<img src="<?= base_url().$meta->basfee_list;?>" alt="<?= $meta->site_title;?>">-->
 									<!--<object data="<?=base_url().$meta->basfee_list;?>" width="100%" height="auto" type="application/pdf"> PDF Plugin Not Available </object>-->
 									<br>
-									<h3><a href="<?=base_url().$meta->basfee_list;?>" target="_blank"> Click to Download</a></h3>
+									<h3><a href="<?=base_url().$meta->basfee_list;?>" target="_blank"> <i class="fa-solid fa-cloud-arrow-down"></i> ভাড়ার তালিকা (Click to Download)</a></h3>
 									<br>
 								</div>
 
@@ -470,8 +482,18 @@
 								</div>	
                         
 								<div class="col-md-12 col-sm-12 col-xs-12">
-									<a href="<?=$train->page_description;?>" target="_blank">
-										<img src="<?=base_url().$train->page_image;?>" alt="<?= $train->page_title;?>">
+									<a href="http://localhost/passengervoice/uploads/pdf/আন্তঃদেশীয় যাত্রীবাহী ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa-solid fa-cloud-arrow-down pull-left"></i> <span>আন্তঃদেশীয় ট্রেনের সময়সূচি</span>
+										<!-- <img src="<?=base_url().$train->page_image;?>" alt="<?= $train->page_title;?>"> -->
+									</a>
+								</div>
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<a href="http://localhost/passengervoice/uploads/pdf/পূর্বাঞ্চলের ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa-solid fa-cloud-arrow-down pull-left"></i><span>পূর্বাঞ্চলের ট্রেনের সময়সূচি</span>
+										<!-- <img src="<?=base_url().$train->page_image;?>" alt="<?= $train->page_title;?>"> -->
+									</a>
+								</div>
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<a href="http://localhost/passengervoice/uploads/pdf/পশ্চিমাঞ্চলের ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa-solid fa-cloud-arrow-down pull-left"></i> <span>পশ্চিমাঞ্চলের ট্রেনের সময়সূচি</span>
+										<!-- <img src="<?=base_url().$train->page_image;?>" alt="<?= $train->page_title;?>"> -->
 									</a>
 								</div>
 
