@@ -44,14 +44,16 @@
 					
 						<label for="image">Image:</label>
 
-						<button class="archive-btn" type="button" data-toggle="modal" data-target="#post-img-modal">Browse</button>
-						<input type="hidden" class="archive_image form-control"   name="image_image" id="image"required>
-						<img src=""  class="archive-img " id="archive_image">
+						<!-- <button class="archive-btn" type="button" data-toggle="modal" data-target="#post-img-modal">Browse</button> -->
+						<input type="file" class="form-control"   name="image_image" id="image"required>
+						<!-- <img src=""  class="archive-img " id="archive_image"> -->
 						
 						<!-- <input type="file" class="form-control" name="image_image" id="image" required> -->
 						
 					</div>
-					
+					<div class="form-group">
+						<img src=""  class="" id="archive_img" width="100px">
+					</div>
 					<div class="form-group form-group-sm">
 						<label for="image-cat">Image Category:</label>
 						
@@ -402,7 +404,23 @@
 
 
 
+<script>
+	document.getElementById('image').addEventListener('change', function(event) {
+            var input = event.target;
+            var preview = document.getElementById('archive_img');
 
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Show the preview image
+                }
+
+                reader.readAsDataURL(input.files[0]); // Convert to data URL
+            }
+        });
+</script>
 
 
 

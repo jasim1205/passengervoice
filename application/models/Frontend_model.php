@@ -188,7 +188,11 @@ class Frontend_model extends CI_Model {
         $this->db->from('category_location');
 		
 		$this->db->join('category_table','category_location.category_id=category_table.category_id','left');
-		
+
+		$this->db->join('post_table','category_location.category_id=post_table.post_category_id','left');
+
+		$this->db->order_by('post_table.post_title', 'DESC');
+
         $this->db->where('category_location.category_location_id', $id);
 		
         $query_result = $this->db->get();

@@ -56,8 +56,8 @@
     <meta name="author" content="Muktodhara Technology Limited">
     <link rel="icon" href="<?= base_url().$meta->site_icon;?>">
 	
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <!-- Your custom styles (optional) -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	
@@ -466,7 +466,7 @@
 									<!--<img src="<?= base_url().$meta->basfee_list;?>" alt="<?= $meta->site_title;?>">-->
 									<!--<object data="<?=base_url().$meta->basfee_list;?>" width="100%" height="auto" type="application/pdf"> PDF Plugin Not Available </object>-->
 									<br>
-									<h3><a href="<?=base_url().$meta->basfee_list;?>" target="_blank"> <i class="fa-solid fa-cloud-arrow-down"></i> ভাড়ার তালিকা (Click to Download)</a></h3>
+									<h3><a href="<?=base_url().$meta->basfee_list;?>" target="_blank"> <i class="fa fa-download"></i> ভাড়ার তালিকা (Click to Download)</a></h3>
 									<br>
 								</div>
 
@@ -482,17 +482,17 @@
 								</div>	
                         
 								<div class="col-md-12 col-sm-12 col-xs-12">
-									<a href="http://localhost/passengervoice/uploads/pdf/আন্তঃদেশীয় যাত্রীবাহী ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa-solid fa-cloud-arrow-down pull-left"></i> <span>আন্তঃদেশীয় ট্রেনের সময়সূচি</span>
+									<a href="http://localhost/passengervoice/uploads/pdf/আন্তঃদেশীয় যাত্রীবাহী ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa fa-download pull-left"></i> <span>আন্তঃদেশীয় ট্রেনের সময়সূচি</span>
 										<!-- <img src="<?=base_url().$train->page_image;?>" alt="<?= $train->page_title;?>"> -->
 									</a>
 								</div>
 								<div class="col-md-12 col-sm-12 col-xs-12">
-									<a href="http://localhost/passengervoice/uploads/pdf/পূর্বাঞ্চলের ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa-solid fa-cloud-arrow-down pull-left"></i><span>পূর্বাঞ্চলের ট্রেনের সময়সূচি</span>
+									<a href="http://localhost/passengervoice/uploads/pdf/পূর্বাঞ্চলের ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa fa-download pull-left"></i><span>পূর্বাঞ্চলের ট্রেনের সময়সূচি</span>
 										<!-- <img src="<?=base_url().$train->page_image;?>" alt="<?= $train->page_title;?>"> -->
 									</a>
 								</div>
 								<div class="col-md-12 col-sm-12 col-xs-12">
-									<a href="http://localhost/passengervoice/uploads/pdf/পশ্চিমাঞ্চলের ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa-solid fa-cloud-arrow-down pull-left"></i> <span>পশ্চিমাঞ্চলের ট্রেনের সময়সূচি</span>
+									<a href="http://localhost/passengervoice/uploads/pdf/পশ্চিমাঞ্চলের ট্রেনের সময়সূচি.pdf" target="_blank"><i class="fa fa-download pull-left"></i> <span>পশ্চিমাঞ্চলের ট্রেনের সময়সূচি</span>
 										<!-- <img src="<?=base_url().$train->page_image;?>" alt="<?= $train->page_title;?>"> -->
 									</a>
 								</div>
@@ -599,7 +599,10 @@
 
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<a href="<?=base_url().'category/'.$sidebar_location3->category_id."?c=".$sidebar_location3->category_name;?>">
-										<img src="<?=$sidebar_location3->category_description;?>" alt="<?=$sidebar_location3->category_name;?>">
+										<img src="<?=$sidebar_location3->post_image;?>" alt="<?=$sidebar_location3->category_name;?>">
+										<span> <?= $sidebar_location3->post_title?> </span><br>
+										<!-- <span> <?= $sidebar_location3->category_id =$sidebar_location3->post_title?> </span><br>
+										<span> <?= $sidebar_location3->category_id =$sidebar_location3->post_title?> </span> -->
 									</a>
 								</div>
 
@@ -764,15 +767,18 @@
 							<div class="col-md-4 col-sm-4 col-xs-12 no_padding">
 								<div class="publish">
 									<h3>Advisor</h3>
-									<p><?= $meta->site_address_3; ?></p>
+									<a href="#"  id=""  data-toggle="modal" data-target="#advisor">
+										<p><?= $meta->site_address_3; ?></p>
+									</a>
 									<h3>Editor</h3>
-									<p><?= $meta->site_address_4; ?></p>
+									<a href="#"  id=""  data-toggle="modal" data-target="#editor">
+										<p><?= $meta->site_address_4; ?></p>
+									</a>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12 no_padding">
 								<div class="footer-main-address">
 									<h3>Office</h3>
-									
 									<p><?= $meta->site_address_1; ?></p>
 								</div>
 							</div>
@@ -791,6 +797,44 @@
 			</div>
 		</div>
 	</section>
+	<!-- Modal -->
+	<div class="modal fade right" id="advisor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="row">
+						 <!-- Left empty column to offset -->
+						<div class="col-sm-6">
+							<div class="card " style="color:black">
+								<h3 class="text-dark"><?= $meta->site_address_3; ?></h3>
+							</div>
+						</div>
+						 <!-- Right empty column to offset -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade right" id="editor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="row">
+						 <!-- Left empty column to offset -->
+						<div class="col-sm-6">
+							<div class="card " style="color:black">
+								<h3 class="text-dark"><?= $meta->site_address_4; ?></h3>
+							</div>
+						</div>
+						 <!-- Right empty column to offset -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- Modal content -->
+	</div>
 	<section class="copyright">
 		<div class="container">
 			<div class="row">
@@ -809,7 +853,8 @@
 
 	<script src="<?= base_url();?>files/frontend/scripts/custom.js"></script>
 
-
+	
+	
 
 	<script>
 		
