@@ -780,12 +780,12 @@
 								<div class="footer-main-address">
 									<h3>Office</h3>
 									<p><?= $meta->site_address_1; ?></p>
+									<!-- <h5><font face="SolaimanLipi_22-02-2012"><span style="letter-spacing: normal;"><b>5090, CJKS Shopping Complex, Level-05, Kazir Deuri, Kotwali, Chattogram, Bangladesh.</b></span></font></h5> -->
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12 no_padding">
 								<div class="footer-address">
 									<h3>Contact</h3>
-									
 									<p><?= $meta->site_address_2; ?></p>
 								</div>
 							</div>
