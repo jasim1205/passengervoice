@@ -165,11 +165,14 @@ class Post_model extends CI_Model {
         $this->db->update('post_table', $data);
     }
 
-    public function all_post() {
+    public function all_post( ) {
 		
         $this->db->select('*');
 		
         $this->db->from('post_table');
+
+		// $this->db->where('posted_by', $user_id); //new line $user_id
+		// $this->db->join('user_table', 'user_table.user_id=post_table.posted_by', 'left' );
 				
         $this->db->order_by('post_id', 'DESC');
 		

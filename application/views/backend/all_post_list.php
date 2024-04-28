@@ -84,7 +84,6 @@
 								}
 								
 							?>
-						
 							<tr>
 								<td><?= $all_post->post_id;?></td>
 								<td><?= $all_post->post_title;?></td>
@@ -144,17 +143,20 @@
 										<i class="fa fa-edit"></i>
 										
 									</button>
-									
-									<a onclick="return confirm('Are You Sure?');" class="btn btn-danger btn-xs" href="<?=base_url().'delete-post/'.$all_post->post_id;?>">
-									
-										<i class="fa fa-trash-o"></i>
+									<!-- <?php print_r($all_post) ?> -->
+									<?php if($all_post->user_role != 3){?>
+										<a onclick="return confirm('Are You Sure?');" class="btn btn-danger btn-xs" href="<?=base_url().'delete-post/'.$all_post->post_id;?>">
 										
-									</a>
+											<i class="fa fa-trash-o"></i>
+											
+										</a>
+									<?php } ?>
 									
 								</td>
 							</tr>
 							
 						<?php }?>
+						
 							
 						</tbody>
 					</table>

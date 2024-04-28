@@ -822,8 +822,8 @@
 					<div class="row">
 						 <!-- Left empty column to offset -->
 						<div class="col-sm-6">
-							<div class="card " style="color:black">
-								<h3 class="text-dark"><?= $meta->site_address_4; ?></h3>
+							<div class="card">
+								<h3 class=""><?= $meta->site_address_4; ?></h3>
 							</div>
 						</div>
 						 <!-- Right empty column to offset -->

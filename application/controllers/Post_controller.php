@@ -66,9 +66,10 @@ class Post_controller extends CI_Controller {
 	
 		$data = array();
 		
-    
+    	// $user_id = $this->session->userdata('user_id');
 	//////pagination
-	
+	 
+
 		$ord = $this->post_model->all_post();		
 	   
 		$rows = count($ord);
@@ -148,7 +149,7 @@ class Post_controller extends CI_Controller {
 		
 	// pagination Ends
 	
-		
+		// $data['all_post'] = $ord; //new line
         $data['reporter'] = $this->post_model->reporter();
 		
 		$data['all_post'] = $this->post_model->post_limit($off,$lim);
