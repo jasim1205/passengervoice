@@ -71,19 +71,20 @@
 						</thead>
 						<tbody>
 						
-						<?php
-							foreach($all_post as $all_post){
-								
-								$sts = $all_post->post_status;
-								
-								if($sts == 0){
-									$sts = '<span class="label label-danger">Inactive</span>';
-								}
-								if($sts == 1){
-									$sts = '<span class="label label-success">Active</span>';
-								}
+							<?php
+								foreach($all_post as $all_post){
+									
+									$sts = $all_post->post_status;
+									
+									if($sts == 0){
+										$sts = '<span class="label label-danger">Inactive</span>';
+									}
+									if($sts == 1){
+										$sts = '<span class="label label-success">Active</span>';
+									}
 								
 							?>
+							<?php if($all_post->posted_by == $this->session->userdata('user_id') || $this->session->userdata('user_role') == 1) { ?>
 							<tr>
 								<td><?= $all_post->post_id;?></td>
 								<td><?= $all_post->post_title;?></td>
@@ -143,8 +144,8 @@
 										<i class="fa fa-edit"></i>
 										
 									</button>
-									<!-- <?php print_r($all_post) ?> -->
-									<?php if($all_post->user_role != 3){?>
+									<?php print_r($all_post) ?>
+									<?php if($all_post->user_role != 3 ){?>
 										<a onclick="return confirm('Are You Sure?');" class="btn btn-danger btn-xs" href="<?=base_url().'delete-post/'.$all_post->post_id;?>">
 										
 											<i class="fa fa-trash-o"></i>
@@ -155,6 +156,7 @@
 								</td>
 							</tr>
 							
+						<?php }?>
 						<?php }?>
 						
 							

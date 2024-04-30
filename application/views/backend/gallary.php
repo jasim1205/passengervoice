@@ -44,9 +44,9 @@
 					
 						<label for="image">Image:</label>
 
-						<!-- <button class="archive-btn" type="button" data-toggle="modal" data-target="#post-img-modal">Browse</button> -->
-						<input type="file" class="form-control"   name="image_image" id="image"required>
-						<!-- <img src=""  class="archive-img " id="archive_image"> -->
+						<button class="archive-btn" type="button" data-toggle="modal" data-target="#post-img-modal">Browse</button>
+						<!-- <input type="file" class="form-control"   name="image_image" id="image"required> -->
+						<img src=""  class="archive-img " id="archive_image">
 						
 						<!-- <input type="file" class="form-control" name="image_image" id="image" required> -->
 						
@@ -167,7 +167,7 @@
 									<i class="fa fa-edit"></i>
 									
 								</button>
-								
+								<!-- <?php print_r($all_gallary) ?> -->
 								<a onclick="return confirm('Are You Sure?');" class="btn btn-danger btn-xs" href="<?=base_url().'delete-image/'.$all_gallary->image_id;?>">
 									
 									<i class="fa fa-trash-o"></i>

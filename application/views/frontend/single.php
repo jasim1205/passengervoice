@@ -45,7 +45,7 @@
 			</div>
 			<!-- this logo show only for print and hide web view -->
 			<div class="detailNews col-md-12 col-sm-12 col-xs-12">
-			    <p style='font-size:20px'><?=$news_view->post_sub_title;?></p>
+			    <p style='font-size:20px; color:red'><?=$news_view->post_sub_title;?></p>
 				<h2><?=$news_view->post_title;?></h2>
 				<p style="color:gray;"><i class="fa fa-user" aria-hidden="true"></i> <?=$news_view->reporter_name;?> &nbsp;&nbsp; | &nbsp;&nbsp;<i class="fa fa-clock-o" aria-hidden="true"></i> <?php 
 											
@@ -58,12 +58,12 @@
 				<div class="sharethis-inline-share-buttons"></div><br>
 				<p>
 					<img class="img-responsive" src="<?=base_url().$news_view->post_image;?>" alt="<?=$news_view->post_title;?>" />
-					<?=$news_view->post_description;?>
+					<?= html_entity_decode($news_view->post_description);?>
 				</p>
 				<center>
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
                 <!-- passengervoice.net into single page content -->
-                <ins class="adsbygoogle"
+                <!-- <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-7567608637999899"
                      data-ad-slot="6835923121"
@@ -71,7 +71,7 @@
                      data-full-width-responsive="true"></ins>
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </script> -->
                 </center>
 
 			</div>

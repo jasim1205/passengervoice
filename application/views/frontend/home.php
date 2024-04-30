@@ -73,10 +73,10 @@
 							<h6 class="author"><i class="fa fa-user" aria-hidden="true"></i> <?=$news->reporter_name;?></h6>
 							</a>
 
-							<p class="exclusive-news-details"> 
-								<?=substr(strip_tags($news->post_description),0,900);?>...
+							<p class=""> 
+								<?=substr(html_entity_decode($news->post_description),0,900);?>...
 								<a href="<?=base_url().'news-view/'.$news->post_id.'?n='.$news->post_title;?>">
-									<span>বিস্তারিত</span>
+									<span class="text-danger">বিস্তারিত...</span>
 								</a>
 							</p>
 						</div>

@@ -151,13 +151,13 @@
 						<a href="<?=base_url();?>"><img src="<?= base_url().$meta->site_logo;?>" class="logo" alt="<?= $meta->site_name;?>" /></a>
 					</div>
 					
-					<div class="no_padding col-md-5 col-sm-4 col-xs-12 print-hide">
+					<div class="no_padding col-md-5 col-sm-4 col-xs-12 print-hide gx-2">
 						<?php			
 							$ad = $this->frontend_model->get_ad(1);							
 							if($ad != ''){	
 						?>
 						<!-- <?php print_r($ad) ?> -->
-							<div style="" class="bottom_margin top_small_margin no_padding col-md-6 col-sm-12 col-xs-12">
+							<div style="" class="bottom_margin top_small_margin no_padding col-md-5 col-sm-12 col-xs-12">
 								<div class="middleNewsAdd no_padding col-md-12 col-sm-12 col-xs-12">
 									<a class="ads_click_counter" data-ad-id="<?= $ad->advertisement_id;?>" target="_blank" href="<?=$ad->advertisement_url;?>">
 										<img src="<?=base_url().$ad->advertisement_image;?>" title="<?=$ad->advertisement_name;?>" alt="<?=$ad->advertisement_name;?>" />
@@ -165,11 +165,13 @@
 								</div>
 							</div>
 							<?php } ?>
+							<div class="col-md-1"></div>
 							<?php			
 								$ad = $this->frontend_model->get_ad(2);							
 								if($ad != ''){	
 							?>
-							<div style="" class="bottom_margin top_small_margin no_padding col-md-6 col-sm-12 col-xs-12">
+
+							<div style="margin-left:" class="bottom_margin top_small_margin no_padding col-md-5 col-sm-12 col-xs-12">
 								<div class="middleNewsAdd no_padding col-md-12 col-sm-12 col-xs-12">
 									<a class="ads_click_counter" data-ad-id="<?= $ad->advertisement_id;?>" target="_blank" href="<?=$ad->advertisement_url;?>">
 										<img src="<?=base_url().$ad->advertisement_image;?>" title="<?=$ad->advertisement_name;?>" alt="<?=$ad->advertisement_name;?>" />
@@ -767,13 +769,13 @@
 							<div class="col-md-4 col-sm-4 col-xs-12 no_padding">
 								<div class="publish">
 									<h3>Advisor</h3>
-									<a href="#"  id=""  data-toggle="modal" data-target="#advisor">
+									
 										<p><?= $meta->site_address_3; ?></p>
-									</a>
+									
 									<h3>Editor</h3>
-									<a href="#"  id=""  data-toggle="modal" data-target="#editor">
+									
 										<p><?= $meta->site_address_4; ?></p>
-									</a>
+									
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12 no_padding">
@@ -798,18 +800,18 @@
 		</div>
 	</section>
 	<!-- Modal -->
-	<div class="modal fade right" id="advisor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<!-- <div class="modal fade right" id="advisor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="row">
-						 <!-- Left empty column to offset -->
+						 
 						<div class="col-sm-6">
 							<div class="card " style="color:black">
 								<h3 class="text-dark"><?= $meta->site_address_3; ?></h3>
 							</div>
 						</div>
-						 <!-- Right empty column to offset -->
+						
 					</div>
 				</div>
 			</div>
@@ -820,18 +822,18 @@
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="row">
-						 <!-- Left empty column to offset -->
+						
 						<div class="col-sm-6">
 							<div class="card">
 								<h3 class=""><?= $meta->site_address_4; ?></h3>
 							</div>
 						</div>
-						 <!-- Right empty column to offset -->
+						
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 		<!-- Modal content -->
 	</div>
@@ -845,7 +847,7 @@
 			</div>
 		</div>
 	</section>
-<!-- ============footer=============-->
+	<!-- ============footer=============-->
 	<!-- <script src="js/jquery-2.1.1.js"></script> -->
 
 	<script src="<?= base_url();?>files/frontend/owlcarousel/owl.carousel.min.js"></script>

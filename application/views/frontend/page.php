@@ -38,7 +38,7 @@
 					<div class="breakingNews bn-bordernone bn-darkred" id="bn7">
 						<div class="bn-title" class="w-auto"><h2 class="d-inline-block"><?= $page->page_title?> </h2></div>
 						<div class="bn-title" class="w-auto"><img src="<?=base_url().$page->page_image;?>" alt="<?= $page->page_title;?>"></div>
-						<p><?= $page->page_description?></p>
+						<?= html_entity_decode($page->page_description) ?>
 					</div>
 
 				</div>
