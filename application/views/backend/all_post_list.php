@@ -144,7 +144,7 @@
 										<i class="fa fa-edit"></i>
 										
 									</button>
-									<?php print_r($all_post) ?>
+									<!-- <?php print_r($all_post) ?> -->
 									<?php if($all_post->user_role != 3 ){?>
 										<a onclick="return confirm('Are You Sure?');" class="btn btn-danger btn-xs" href="<?=base_url().'delete-post/'.$all_post->post_id;?>">
 										
