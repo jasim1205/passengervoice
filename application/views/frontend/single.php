@@ -58,8 +58,9 @@
 				<div class="sharethis-inline-share-buttons"></div><br>
 				<p>
 					<img class="img-responsive" src="<?=base_url().$news_view->post_image;?>" alt="<?=$news_view->post_title;?>" />
-					<?= html_entity_decode($news_view->post_description);?>
+					
 				</p>
+				<p id="post"><?= html_entity_decode($news_view->post_description);?></p>
 				<center>
                 <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
                 <!-- passengervoice.net into single page content -->
@@ -193,5 +194,22 @@
 			</div>
 		</div>
 	</div>
+		<script>
+			// Function to insert advertisement HTML into the middle of the page description
+			function insertAdInMiddle(adHTML) {
+				var pageDescription = document.getElementById('post'); 
+				var descriptionContent = pageDescription.innerHTML;
+				var middleIndex = Math.floor(descriptionContent.length / 2);
+				var adDiv = document.createElement('div');
+				adDiv.innerHTML = adHTML;
+
+			
+				pageDescription.insertBefore(adDiv, pageDescription.childNodes[middleIndex]);
+			}
+
+			
+			var adHTML = '<?php echo html_entity_decode($ad); ?>';
+			insertAdInMiddle(adHTML);
+		</script>
 				
 				
