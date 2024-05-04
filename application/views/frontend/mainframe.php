@@ -322,7 +322,7 @@
                             
 							</div>
 							
-							<!---  Add scetion end
+							Add scetion end
 						
 						
 							<div class="col-md-12 col-sm-12 col-xs-12 public-comment">
@@ -365,7 +365,7 @@
 								</div>
 
 							</div>
--->
+
 							<!---  Add scetion start-->
 							<div class="col-md-12 col-sm-12 col-xs-12 no_padding">
 								<?php
@@ -556,7 +556,7 @@
 
 
 
-							<div class="col-md-12 col-sm-12 col-xs-12 sidebar-info">
+							<!-- <div class="col-md-12 col-sm-12 col-xs-12 sidebar-info">
 								
 								<div class="cat-head col-md-12 col-sm-12 col-xs-12"> 					
 									<h3><span>নামাজের সময়সূচি</span></h3>
@@ -566,7 +566,7 @@
 									<iframe src="http://sunsetsunrisetime.com/widget_namaz.php?view=true&amp;idcity=665&amp;text=054871&amp;colB=054871&amp;infoDetails=true&amp;method=1&amp;timezone=6&amp;typeClock=undefined" frameborder="0" width="100%" scrolling="no" height="415"></iframe>
 								</div>
 
-							</div>
+							</div> -->
 							<!---  Add scetion start-->
 							<div class="col-md-12 col-sm-12 col-xs-12 no_padding">
 								<?php
@@ -728,13 +728,9 @@
 								</div>	
 
 								<div class="col-md-12 col-sm-12 col-xs-12">
-								<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPassenger-voice-109692330365340%2F&tabs=timeline&width=270&height=1300&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=1405933432817561" width="270" height="1300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+									<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpassengervoice.net%2F&tabs=timeline&width=250px&height=250px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="250px" height="250px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 								</div>
-
 							</div>
-
-							
-
 						</div>
 					</div>
 
@@ -742,9 +738,6 @@
 			</div>
 		</div>
 	</section>
-
-    
-		
 
 <!-- ============footer start=============-->
 	<section class="footer clear">
