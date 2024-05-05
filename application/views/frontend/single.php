@@ -44,7 +44,8 @@
 				</ol>
 			</div>
 			<!-- this logo show only for print and hide web view -->
-			<div class="detailNews col-md-12 col-sm-12 col-xs-12">
+			
+			<div id="detailNews" class="detailNews col-md-12 col-sm-12 col-xs-12">
 			    <p style='font-size:20px; color:red'><?=$news_view->post_sub_title;?></p>
 				<h2><?=$news_view->post_title;?></h2>
 				<p style="color:gray;"><i class="fa fa-user" aria-hidden="true"></i> <?=$news_view->reporter_name;?> &nbsp;&nbsp; | &nbsp;&nbsp;<i class="fa fa-clock-o" aria-hidden="true"></i> <?php 
@@ -80,12 +81,9 @@
 			<div class="top_margin no_padding col-md-12 col-sm-12 col-xs-12 print-hide">
 				<div class="bottom_margin no_padding col-md-6 col-sm-12 col-xs-12">
 					<?php
-							
 						$ad = $this->frontend_model->get_ad(17);
 						
 						if($ad != ''){
-							
-						
 					?>
 					<div class="topads-two col-md-12 col-sm-12 col-xs-12">
 						<a class="ads_click_counter" data-ad-id="<?= $ad->advertisement_id;?>" target="_blank" href="<?=$ad->advertisement_url;?>">
@@ -191,25 +189,27 @@
 					</div>
 					<?php } ?>
 				</div>
+				<div class="DContentAdd no_padding col-md-12 col-sm-12 col-xs-12 print-hide">
+					<?php
+						$ad = $this->frontend_model->get_ad(25);
+						if($ad != ''){
+					?>
+					<div class="topads-two col-md-12 col-sm-12 col-xs-12">
+						<a class="ads_click_counter" data-ad-id="<?= $ad->advertisement_id;?>" target="_blank" href="<?=$ad->advertisement_url;?>">					
+							<img src="<?=base_url().$ad->advertisement_image;?>" title="<?=$ad->advertisement_name;?>" class="img-responsive" alt="<?=$ad->advertisement_name;?>"/>
+						</a>
+					</div>
+					<?php } ?>
+				</div>
 			</div>
 		</div>
+		
 	</div>
-		<script>
-			// Function to insert advertisement HTML into the middle of the page description
-			function insertAdInMiddle(adHTML) {
-				var pageDescription = document.getElementById('post'); 
-				var descriptionContent = pageDescription.innerHTML;
-				var middleIndex = Math.floor(descriptionContent.length / 2);
-				var adDiv = document.createElement('div');
-				adDiv.innerHTML = adHTML;
-
-			
-				pageDescription.insertBefore(adDiv, pageDescription.childNodes[middleIndex]);
-			}
-
-			
-			var adHTML = '<?php echo html_entity_decode($ad); ?>';
-			insertAdInMiddle(adHTML);
-		</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		$(document).ready(function() {
+			$(".DContentAdd").insertAfter($("#detailNews p:nth-child(2)"));
+		});
+	</script>
 				
 				

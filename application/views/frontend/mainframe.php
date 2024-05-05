@@ -500,8 +500,6 @@
 								</div>
 
 							</div>
-
-
 							<div class="col-md-12 col-sm-12 col-xs-12 sidebar-info">
 								
 								<?php
@@ -544,8 +542,7 @@
 								
 								<div class="cat-head col-md-12 col-sm-12 col-xs-12"> 					
 									<h3><span>আবহাওয়া</span></h3>
-								</div>	
-
+								</div>
 								<div class="col-md-12 col-sm-12 col-xs-12">
 										<a href="https://www.accuweather.com/en/bd/chittagong/27822/weather-forecast/27822" class="aw-widget-legal">
 										</a><div id="awcc1526100755813" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="en-us" data-useip="false" data-uid="awcc1526100755813"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
@@ -570,7 +567,6 @@
 							<!---  Add scetion start-->
 							<div class="col-md-12 col-sm-12 col-xs-12 no_padding">
 								<?php
-						
 									$ad = $this->frontend_model->get_ad(23);
 									
 									if($ad != ''){							
@@ -716,11 +712,6 @@
 
 							</div>
 
-
-							
-
-
-
 							<div class="col-md-12 col-sm-12 col-xs-12 sidebar-info">
 								
 								<div class="cat-head col-md-12 col-sm-12 col-xs-12"> 					
@@ -793,42 +784,9 @@
 		</div>
 	</section>
 	<!-- Modal -->
-	<!-- <div class="modal fade right" id="advisor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-body">
-					<div class="row">
-						 
-						<div class="col-sm-6">
-							<div class="card " style="color:black">
-								<h3 class="text-dark"><?= $meta->site_address_3; ?></h3>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade right" id="editor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-body">
-					<div class="row">
-						
-						<div class="col-sm-6">
-							<div class="card">
-								<h3 class=""><?= $meta->site_address_4; ?></h3>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
+	
 
-		<!-- Modal content -->
+	<!-- Modal content -->
 	</div>
 	<section class="copyright">
 		<div class="container">
