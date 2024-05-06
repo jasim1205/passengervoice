@@ -7,6 +7,8 @@ $route['default_controller'] = 'mainframe_front/index';
 
 $route['category/(.+)'] = 'mainframe_front/category/$1';
 
+$route['archive/(.+)'] = 'mainframe_front/archive/$1';
+
 $route['news-view/(.+)'] = 'mainframe_front/news_view/$1';
 
 $route['front-video'] = 'mainframe_front/video';

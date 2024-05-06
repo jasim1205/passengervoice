@@ -95,8 +95,8 @@
 	
 	
 	<!-- calender -->
-	<link rel="stylesheet" type="text/css" href="<?= base_url();?>files/frontend/css/jsCalendar.css">
-	<script type="text/javascript" src="<?= base_url();?>files/frontend/js/jsCalendar.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?= base_url();?>files/frontend/css/calendar.css">
+	<script type="text/javascript" src="<?= base_url();?>files/frontend/js/calendar.js"></script>
 
 	<script src="https://apis.google.com/js/platform.js"></script>
 	<style type="text/css">
@@ -648,9 +648,28 @@
 									<h3><span>ক্যালেন্ডার</span></h3>
 								</div>	
 
-								<div class="col-md-12 col-sm-12 col-xs-12">	
-									<div class="auto-jsCalendar material-theme red"></div>
-								</div>
+								<div class="calendar-container">
+								    <div class="calander-top">
+								        <div class="calendar-header">
+                                          <button id="prevMonthBtn">&lt;</button>
+                                          <h4 id="currentMonthYear"></h4>
+                                          <button id="nextMonthBtn">&gt;</button>
+                                        </div>
+                                        <div class="calendar-header">
+                                          <table width="100%">
+                                              <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                                          </table>
+                                        </div>
+								    </div>
+                                    
+                                    <div id="calendar" class="calendar"></div>
+									<input type="hidden" id="burl" value="<?= base_url() ?>">
+                                </div>
+
+                                  <!--<div id="content" class="content">-->
+                                    <!-- Content will be displayed here -->
+                                  <!--</div>-->
+									<!--<div class="auto-jsCalendar material-theme red"></div>-->
 
 							</div>
 

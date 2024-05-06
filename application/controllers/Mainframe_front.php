@@ -31,8 +31,6 @@ class Mainframe_front extends CI_Controller {
 		
 	}
 	
-	
-
 
 	public function category($id){
 		
@@ -775,7 +773,119 @@ class Mainframe_front extends CI_Controller {
     }
     
 	
-	
+	public function archive($ar_date){
+		// echo $ar_date;
+		$data = array();
+		
+		$data['post_date'] = $post_date = $this->frontend_model->archive($ar_date);
+		
+		//pagination start
+
+		$cpin = '';
+
+		if(isset($post_date->post_id)) {
+			$cpin = $post_date->post_id;
+		}
+		
+		$ord = $this->frontend_model->news($ar_date,$cpin);
+		
+		$rows = count($ord);
+
+		$page_rows = 21;
+
+		$last = ceil($rows/$page_rows);
+
+		if($last < 1){
+			$last = 1;
+		}
+
+		$pagenum = 1;
+
+		// Get pagenum from URL vars if it is present, else it is = 1
+		if(isset($_GET['pn'])){
+			
+			$pagenum = preg_replace('#[^0-9]#', '', $_GET['pn']);
+			
+		}
+
+		// This makes sure the page number isn't below 1, or more than our $last page
+		if ($pagenum < 1) {
+			
+			$pagenum = 1; 
+			
+		} else if ($pagenum > $last) { 
+
+			$pagenum = $last; 
+			
+		}
+
+		//$limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
+
+		$off = ($pagenum - 1) * $page_rows;
+
+		$lim = $page_rows;
+
+
+		$textline2 = "Page <b>$pagenum</b> of <b>$last</b>";
+
+		$paginationCtrls = '';
+
+		if($last != 1){
+
+			if ($pagenum > 1) {
+				$previous = $pagenum - 1;
+				$paginationCtrls .= '<li><a href="'.base_url().'archive/'.$ar_date.'?pn='.$previous.'">&laquo;</a></li>';
+				
+				for($i = $pagenum-4; $i < $pagenum; $i++){
+					if($i > 0){
+						$paginationCtrls .= '<li><a href="'.base_url().'archive/'.$ar_date.'?pn='.$i.'">'.$i.'</a></li> ';
+					}
+				}
+			}
+			
+			$paginationCtrls .= '<li class="active"><a>'.$pagenum.'</a></li> ';
+			
+			for($i = $pagenum+1; $i <= $last; $i++){
+				$paginationCtrls .= '<li> <a href="'.base_url().'archive/'.$ar_date.'?pn='.$i.'">'.$i.'</a></li> ';
+				if($i >= $pagenum+4){
+					break;
+				}
+			}
+			
+			if ($pagenum != $last) {
+				$next = $pagenum + 1;
+				$paginationCtrls .= ' <li><a href="'.base_url().'archive/'.$ar_date.'?pn='.$next.'">&raquo;</a></li> ';
+			}
+		}
+
+
+
+		$data['paginationCtrls'] = $paginationCtrls;
+
+		$data['textline2'] = $textline2;
+
+		// pagination Ends
+
+
+		$data['posts'] = $this->frontend_model->news_limit($off,$lim,$ar_date,$cpin);		
+		
+		$data['meta'] = $this->frontend_model->meta();
+		
+		$data['menu'] = $data['footer_menu'] = $this->frontend_model->menu();
+		
+		$data['scroll_news'] = $this->frontend_model->scroll_news();
+		
+		$data['sidebar_latest'] = $this->frontend_model->sidebar_latest($cpin);
+		
+		$data['post_date'] = $this->frontend_model->get_post_by_date($ar_date);
+
+		// $data['news_category'] = $this->frontend_model->get_category_single($ar_date);
+		
+		$data['main_content'] = $this->load->view('frontend/archive',$data,true);
+		
+		$this->load->view('frontend/mainframe', $data);
+		
+	}
 	
 	
 	

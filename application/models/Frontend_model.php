@@ -59,6 +59,7 @@ class Frontend_model extends CI_Model {
         return $result_info;
 		
     }
+    
 	
     
     public function get_ad($id){
@@ -319,7 +320,115 @@ class Frontend_model extends CI_Model {
         return $result_info;
 		
     }
+//for archive start
+	public function archive($ar_date){
+		
+		$this->db->select('*');
+		
+        $this->db->from('post_table');
+		
+        $this->db->join('reporter_table', 'post_table.reporter=reporter_table.reporter_id', 'left');
+        
+        $this->db->where('FIND_IN_SET("'.$ar_date.'",post_category_id) !=',0);
+		
+        $this->db->where('post_status', 1);
+
+        $this->db->where('post_date', $ar_date);
+		
+		// $this->db->where('category_pin', 1);
+		
+        $this->db->order_by('post_id', 'DESC');
+		
+        $query_result = $this->db->get();
+		
+        $result_info = $query_result->row();
+		
+        return $result_info;
+		
+    }
+    public function get_post_by_date($ar_date){
+		
+		$this->db->select('*');
+		
+        $this->db->from('post_table');
+		
+        $this->db->where('post_date', $ar_date);
+		
+        $query_result = $this->db->get();
+		
+        $result_info = $query_result->row();
+		
+        return $result_info;
+		
+    }
+    // public function post_limit($off,$lim,$ar_date,$skip_id = false) {
+		
+    //     $this->db->select('*');
+		
+    //     $this->db->from('post_table');
+		
+    //     $this->db->join('reporter_table', 'post_table.reporter=reporter_table.reporter_id', 'left');
+        
+    //     $this->db->where('FIND_IN_SET("'.$ar_date.'",post_category_id) !=',0);
+		
+    //     $this->db->where('post_date', $ar_date);
+
+    //     $this->db->where('post_status', 1);
+
+    //       if($skip_id){
+		
+    //     	$this->db->where('post_id !=', $skip_id);
+
+    //     }
+		
+		
+		
+    //     $this->db->order_by('post_id', 'DESC');
+		
+    //     $this->db->offset($off);
+		
+    //     $this->db->limit($lim);
+		
+    //     $query_result = $this->db->get();
+		
+    //     $result_info = $query_result->result();
+		
+    //     return $result_info;
+		
+    // }
     	
+	// public function posts($ar_date,$skip_id = false){
+		
+	// 	$this->db->select('*');
+		
+    //     $this->db->from('post_table');
+		
+    //     $this->db->join('reporter_table', 'post_table.reporter=reporter_table.reporter_id', 'left');
+        
+    //     $this->db->where('FIND_IN_SET("'.$ar_date.'",post_category_id) !=',0);
+		
+    //     $this->db->where('post_date', $ar_date);
+
+    //     $this->db->where('post_status', 1);
+
+    //     if($skip_id){
+		
+    //     	$this->db->where('post_id !=', $skip_id);
+
+    //     }
+		
+    //     $this->db->order_by('post_id', 'DESC');
+		
+    //     $query_result = $this->db->get();
+		
+    //     $result_info = $query_result->result();
+		
+    //     return $result_info;
+		
+    // }
+//for archive end
+
+
 	public function news($id,$skip_id = false){
 		
 		$this->db->select('*');
