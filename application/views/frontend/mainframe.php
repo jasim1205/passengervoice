@@ -596,7 +596,7 @@
 
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<a href="<?=base_url().'category/'.$sidebar_location3->category_id."?c=".$sidebar_location3->category_name;?>">
-										<img src="<?=$sidebar_location3->post_image;?>" alt="<?=$sidebar_location3->category_name;?>">
+										<img src="<?=base_url()?><?=$sidebar_location3->post_image;?>" alt="<?=$sidebar_location3->category_name;?>">
 										<span> <?= $sidebar_location3->post_title?> </span><br>
 										<!-- <span> <?= $sidebar_location3->category_id =$sidebar_location3->post_title?> </span><br>
 										<span> <?= $sidebar_location3->category_id =$sidebar_location3->post_title?> </span> -->

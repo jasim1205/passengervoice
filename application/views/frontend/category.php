@@ -43,7 +43,24 @@
 			</div>
 		
 			<div class="categoryNews top_padding no_padding col-md-12 col-sm-12 col-xs-12">
-			
+				<div class="bottom_margin no_padding col-md-12 col-sm-12 col-xs-12">
+					<?php
+							
+						$ad = $this->frontend_model->get_ad(18);
+						
+						if($ad != ''){
+							
+						
+					?>
+					<div class="topads-two col-md-12 col-sm-12 col-xs-12">
+						<a class="ads_click_counter" data-ad-id="<?= $ad->advertisement_id;?>" target="_blank" href="<?=$ad->advertisement_url;?>">
+													
+							<img src="<?=base_url().$ad->advertisement_image;?>" title="<?=$ad->advertisement_name;?>" class="img-responsive" alt="<?=$ad->advertisement_name;?>"/>
+						
+						</a>
+					</div>
+					<?php } ?>
+				</div>
 				<div class="no_padding col-md-12 col-sm-12 col-xs-12">
 					<?php
 						foreach ($news as $news){

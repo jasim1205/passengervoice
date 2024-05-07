@@ -37,7 +37,7 @@
 			
 				<ol class="breadcrumb">
 					<li><a href="<?=base_url();?>">হোম</a></li>
-					<li><a href="<?=base_url();?>category/<?=$post_date->post_date;?>?c=<?=$post_date->post_date;?>"><?=$post_date->post_date;?></a></li>    
+					<li><a href="<?=base_url();?>archive/<?=$post_date;?>"><?=$post_date;?></a></li>    
 				</ol>
 			
 			</div>
@@ -46,12 +46,13 @@
 			
 				<div class="no_padding col-md-12 col-sm-12 col-xs-12">
 					<?php
-						foreach ($posts as $posts){
+						foreach ($posts as $post){
 					?>
 					<div class="col-md-4 col-sm-6 col-xs-12">
-						<a href="<?=base_url().'news-view/'.$posts->post_id.'?n='.$posts->post_title;?>"><img src="<?=base_url().$posts->post_image;?>" alt="<?=$posts->post_title;?>" /></a>
-						<h4> <?=$posts->post_title;?></h4>
-						<p class="news-details"><b><?=$posts->reporter_name;?> :</b> <?=substr(strip_tags($posts->post_description),0,260);?>...<a class="more" href="<?=base_url().'news-view/'.$posts->post_id.'?n='.$posts->post_title;?>">বিস্তারিত</a></p>
+						
+						<a href="<?=base_url().'news-view/'.$post->post_id.'?n='.$post->post_title;?>"><img src="<?=base_url().$post->post_image;?>" alt="<?=$post->post_title;?>" /></a>
+						<h4> <?=$post->post_title;?></h4>
+						<p class="news-details"><b><?=$post->reporter_name;?> :</b> <?=substr(strip_tags($post->post_description),0,260);?>...<a class="more" href="<?=base_url().'news-view/'.$post->post_id.'?n='.$post->post_title;?>">বিস্তারিত</a></p>
 						<br>
 					</div>
 					<?php } ?>
